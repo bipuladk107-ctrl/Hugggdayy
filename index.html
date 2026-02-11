@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Hug Day, My Wifeey 🤍</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#f4f6fb,#e8ecf3);
+  overflow:hidden;
+  transition:background 1.8s ease;
+}
+
+.container{
+  width:90%;
+  max-width:460px;
+  text-align:center;
+  position:relative;
+}
+
+h1{
+  font-family:'Playfair Display',serif;
+  font-size:30px;
+  margin-bottom:15px;
+  color:#1d1d1d;
+}
+
+.tap{
+  font-family:'Cormorant Garamond',serif;
+  font-size:18px;
+  color:#777;
+  margin-bottom:50px;
+  font-style:italic;
+}
+
+.heart{
+  font-size:52px;
+  position:absolute;
+  top:38%;
+  transition:all 2.2s cubic-bezier(.4,0,.2,1);
+}
+
+.left{
+  left:-70px;
+}
+
+.right{
+  right:-70px;
+}
+
+.move-left{
+  left:50%;
+  transform:translate(-100%, -50%);
+}
+
+.move-right{
+  right:50%;
+  transform:translate(100%, -50%);
+}
+
+.message{
+  margin-top:160px;
+  max-height:55vh;
+  overflow-y:auto;
+  padding:0 10px;
+  font-family:'Cormorant Garamond',serif;
+  font-size:20px;
+  line-height:1.9;
+  color:#2e2e2e;
+  opacity:0;
+  transition:opacity 2s ease;
+}
+
+.message p{
+  margin-bottom:22px;
+}
+
+.show{
+  opacity:1;
+}
+
+.warm{
+  background:linear-gradient(135deg,#fff4e8,#f3d7a6);
+}
+</style>
+</head>
+
+<body>
+
+<div class="container" id="scene">
+  <h1>Happy Hug Day, My Wifeey 🤍</h1>
+  <div class="tap">Tap anywhere</div>
+
+  <div class="heart left" id="heart1">🤍</div>
+  <div class="heart right" id="heart2">🤍</div>
+
+  <div class="message" id="text">
+
+    <p>
+      If I were standing in front of you right now,
+      I wouldn’t rush into your arms.
+      I would walk toward you slowly,
+      because moments like that deserve to be felt before they even happen.
+    </p>
+
+    <p>
+      And when I finally reached you,
+      I wouldn’t say anything.
+      I would just pull you close,
+      letting my arms tell you everything
+      my words sometimes fail to express.
+    </p>
+
+    <p>
+      In that quiet embrace,
+      you would feel how deeply you are loved,
+      how gently you are chosen,
+      and how certain I am about us —
+      not just today,
+      but every single day.
+    </p>
+
+    <p>
+      Because hugging you wouldn’t just feel warm…
+      it would feel like peace.
+      Like home.
+      Like my heart finally resting where it belongs.
+    </p>
+
+    <p>
+      And if I held you a little longer than usual,
+      it wouldn’t be because I’m afraid to let go —
+      it would be because in that moment,
+      everything feels exactly right.
+    </p>
+
+  </div>
+</div>
+
+<script>
+let activated = false;
+
+document.getElementById("scene").addEventListener("click", function(){
+
+  if(activated) return;
+  activated = true;
+
+  document.getElementById("heart1").classList.add("move-left");
+  document.getElementById("heart2").classList.add("move-right");
+
+  setTimeout(()=>{
+    document.body.classList.add("warm");
+    document.getElementById("text").classList.add("show");
+  },2200);
+
+});
+</script>
+
+</body>
+</html>
